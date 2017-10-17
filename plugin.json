@@ -1,0 +1,14 @@
+{
+    "name": "FOO",
+    "api": "Plugin.FOO",
+    "async": false,
+    "request": {
+        "strValue": "string",
+        "intValue": "int",
+        "floatValue": "float",
+        "boolValue": "boolean"
+    },
+    "response": {
+        "text": "string"
+    }
+}
