@@ -1,15 +1,13 @@
 //
 //  LGOFOOPlugin.m
 //  plugin
-//
-//  Created by 崔明辉 on 2017/10/17.
-//  Copyright © 2017年 UED Center, YY Inc. All rights reserved.
-//
 
 #import "LGOFOOPlugin.h"
 #import <LEGO-SDK/LGOCore.h>
 
 @interface LGOFOORequest: LGORequest
+
+//RequestParams
 
 @end
 
@@ -19,13 +17,15 @@
 
 @interface LGOFOOResponse: LGOResponse
 
+//ResponseParams
+
 @end
 
 @implementation LGOFOOResponse
 
 - (NSDictionary *)resData {
     return @{
-             @"text": @"Hello, World!",
+             //AssignResponseParams
              };
 }
 
@@ -43,6 +43,10 @@
     return [[LGOFOOResponse new] accept:nil];
 }
 
+- (void)requestAsynchronize:(LGORequestableAsynchronizeBlock)callbackBlock {
+    callbackBlock([self requestSynchronize]);
+}
+
 @end
 
 @implementation LGOFOOPlugin
@@ -50,6 +54,7 @@
 - (LGORequestable *)buildWithDictionary:(NSDictionary *)dictionary context:(LGORequestContext *)context {
     LGOFOOperation *operation = [LGOFOOperation new];
     operation.request = [LGOFOORequest new];
+    //AssignRequestParams
     return operation;
 }
 
