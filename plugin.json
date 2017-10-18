@@ -1,7 +1,6 @@
 {
     "name": "FOO",
     "api": "Plugin.FOO",
-    "async": false,
     "request": {
         "strValue": "string",
         "intValue": "int",
