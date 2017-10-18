@@ -12,4 +12,8 @@ class LGOFOOOperation(val request: LGOFOORequest): LGORequestable() {
         return LGOFOOResponse().accept(null)
     }
 
+    override fun requestAsynchronize(callbackBlock: (LGOResponse) -> Unit) {
+        callbackBlock.invoke(requestSynchronize())
+    }
+
 }
