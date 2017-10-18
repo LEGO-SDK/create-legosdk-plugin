@@ -54,3 +54,8 @@ implementContent = implementContent.replace('//AssignResponseParams', responseAs
 implementContent = implementContent.replace('[[LGOCore modules] addModuleWithName:@"Plugin.FOO" instance:[self new]];', '[[LGOCore modules] addModuleWithName:@"' + plugin.api + '" instance:[self new]];')
 implementContent = implementContent.replace(/FOO/ig, plugin.name);
 fs.writeFileSync(path.resolve(__dirname, '../ios/Source/LGO' + plugin.name + 'Plugin.m'), implementContent)
+var projContent = fs.readFileSync(path.resolve(__dirname, '../ios/plugin.xcodeproj/project.pbxproj'), 'utf-8');
+projContent = projContent.replace(/FOO/ig, plugin.name);
+fs.writeFileSync(path.resolve(__dirname, '../ios/plugin.xcodeproj/project.pbxproj'), projContent)
+fs.unlinkSync(path.resolve(__dirname, '../ios/Source/LGOFOOPlugin.h'))
+fs.unlinkSync(path.resolve(__dirname, '../ios/Source/LGOFOOPlugin.m'))

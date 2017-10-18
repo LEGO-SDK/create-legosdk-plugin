@@ -58,6 +58,15 @@
     return operation;
 }
 
+- (LGORequestable *)buildWithRequest:(LGORequest *)request {
+    if ([request isKindOfClass:[LGOFOORequest class]]) {
+        LGOFOOperation *operation = [LGOFOOperation new];
+        operation.request = (LGOFOORequest *)request;
+        return operation;
+    }
+    return nil;
+}
+
 + (void)load {
     [[LGOCore modules] addModuleWithName:@"Plugin.FOO" instance:[self new]];
 }
