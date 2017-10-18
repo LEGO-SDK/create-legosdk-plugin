@@ -9,4 +9,6 @@ import com.opensource.legosdk.core.LGORequestContext
 
 class LGOFOORequest(context: LGORequestContext?) : LGORequest(context) {
 
+    //RequestParams
+
 }

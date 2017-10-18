@@ -6,7 +6,9 @@ import org.json.JSONObject
 class LGOFOO: LGOModule() {
 
     override fun buildWithJSONObject(obj: JSONObject, context: LGORequestContext): LGORequestable? {
-        return LGOFOOOperation(LGOFOORequest(context))
+        val request = LGOFOORequest(context)
+        //AssignRequestParams
+        return LGOFOOOperation(request)
     }
 
 }

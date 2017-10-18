@@ -13,9 +13,6 @@ class Application: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        val applicationInfo = this.packageManager.getApplicationInfo(this.packageName, PackageManager.GET_META_DATA)
-        val ks = applicationInfo.metaData.keySet()
-        val ss = Class.forName("com.opensource.legosdk.plugin.foo.LGOFOO")
         LGOWebViewActivity.navigationBarDrawable = ColorDrawable(0xFF3F51B5.toInt())
     }
 
