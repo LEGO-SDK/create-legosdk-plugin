@@ -57,5 +57,9 @@ fs.writeFileSync(path.resolve(__dirname, '../ios/Source/LGO' + plugin.name + 'Pl
 var projContent = fs.readFileSync(path.resolve(__dirname, '../ios/plugin.xcodeproj/project.pbxproj'), 'utf-8');
 projContent = projContent.replace(/FOO/ig, plugin.name);
 fs.writeFileSync(path.resolve(__dirname, '../ios/plugin.xcodeproj/project.pbxproj'), projContent)
+var specContent = fs.readFileSync(path.resolve(__dirname, '../LEGO-SDK-Plugin-FOO.podspec'), 'utf-8');
+specContent = specContent.replace(/FOO/ig, plugin.name);
+fs.writeFileSync(path.resolve(__dirname, '../LEGO-SDK-Plugin-' + plugin.name + '.podspec'), specContent)
 fs.unlinkSync(path.resolve(__dirname, '../ios/Source/LGOFOOPlugin.h'))
 fs.unlinkSync(path.resolve(__dirname, '../ios/Source/LGOFOOPlugin.m'))
+fs.unlinkSync(path.resolve(__dirname, '../LEGO-SDK-Plugin-FOO.podspec'))
